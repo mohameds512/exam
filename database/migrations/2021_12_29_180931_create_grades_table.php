@@ -15,7 +15,7 @@ class CreateGradesTable extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
-            $table->json('name')->unique();
+            $table->text('name')->unique();
             $table->text('notes')->nullable();
             $table->timestamps();
         });
