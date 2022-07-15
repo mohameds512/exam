@@ -19,15 +19,15 @@
                             <div class="card-body">
                                 <span>
                                     {{-- @if (!(empty($exam->grades->name))) --}}
-                                        {{$exam->grades->name}}/
+                                        {{-- {{$exam->grades->name}}/
                                         {{$exam->class->name}}/
                                         {{$exam->sections->name}}/
                                         {{$exam->subjects->name}}/
                                         @if (!(empty($exam->unites->name) ))
                                             {{$exam->unites->name}}
-                                        @else
+                                        @else --}}
                                             {{ trans('users_trans.all_unites') }}
-                                        @endif
+                                        {{-- @endif --}}
                                     {{-- @else
                                         {{ trans('users_trans.undefined') }}
                                     @endif --}}
