@@ -69,7 +69,7 @@
     </span>
     <br>
     @if ($show_exams_table)
-        @if ($sh_prof)
+        @if ($sh_prof==true)
             @include('livewire.profile')
         @else
             @include('livewire.index')
