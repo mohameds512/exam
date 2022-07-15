@@ -18,7 +18,7 @@
                             </div>
                             <div class="card-body">
                                 <span>
-                                    @if (!(empty($exam->grades->name)))
+                                    {{-- @if (!(empty($exam->grades->name))) --}}
                                         {{$exam->grades->name}}/
                                         {{$exam->class->name}}/
                                         {{$exam->sections->name}}/
@@ -28,9 +28,9 @@
                                         @else
                                             {{ trans('users_trans.all_unites') }}
                                         @endif
-                                    @else
+                                    {{-- @else
                                         {{ trans('users_trans.undefined') }}
-                                    @endif
+                                    @endif --}}
                                 </span>
                             </div>
                             <div class="card-footer">
