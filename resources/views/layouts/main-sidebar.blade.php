@@ -111,15 +111,7 @@
 							<li><a class="slide-item" href="{{ route('teachers.index') }}">{{ trans('main_trans.teachers_list') }}</a></li>
 						</ul>
 					</li>
-                    {{-- student  --}}
-                    <li class="slide">
-                        <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"> <i class="side-menu__icon fa fa-user-graduate "  ></i>
-                            <span class="side-menu__label" style="margin-top: 15px">{{ trans('main_trans.students') }}</span><i class="angle fe fe-chevron-down"></i>
-                        </a>
-						<ul class="slide-menu">
-							<li><a class="slide-item" href="{{ route('teachers.index') }}">{{ trans('main_trans.students_list') }}</a></li>
-						</ul>
-					</li>
+
                     {{-- dd --}}
                     <li class="slide">
                         <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"> <i class="side-menu__icon fa fa-book-open "  ></i>
@@ -139,6 +131,17 @@
 							<li><a class="slide-item" href="get_trashed/{trashed}">{{ trans('questions_trans.trashed_questions_list') }}</a></li>
 						</ul>
 					</li>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
 
 				</ul>
 			</div>
