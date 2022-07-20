@@ -76,7 +76,8 @@
                                                             <i class="fa fa-edit"></i>
                                                         </button> --}}
 
-                                                        <a href="{{ route('users.edit', 'us_'.$user->id + 521 ) }}"  class=" btn btn-sm btn-warning">
+                                                        {{-- <a href="{{ route('users.edit', 'us_'.$user->id + 521 ) }}"  class=" btn btn-sm btn-warning"> --}}
+                                                            <a href="{{ route('users.edit',Crypt::encrypt($user->id) ) }}"  class=" btn btn-sm btn-warning">
                                                             <i class="fa fa-edit"></i>
                                                         </a>
 

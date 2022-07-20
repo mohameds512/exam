@@ -151,9 +151,6 @@
                                                     <button class="btn ripple btn-primary" type="submit">
                                                         {{ trans('grades_trans.save') }}
                                                     </button>
-                                                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">
-                                                        {{ trans('grades_trans.close') }}
-                                                    </button>
                                                 </div>
                                             </form>
 

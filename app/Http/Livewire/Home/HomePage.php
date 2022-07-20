@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Home;
 
 use App\Models\Exams;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class HomePage extends Component
@@ -12,13 +13,19 @@ class HomePage extends Component
 
     public function go_test($ex_id)
     {
-        if (session()->get('guest_experiment') == 1 ) {
-            return redirect()->route('login');
+        if (Auth::guest()) {
+            if (session()->get('guest_experiment') == 1 ) {
+                return redirect()->route('login');
+            }
         }
+
         $this->emit('pass_test_id' , $ex_id );
         $this->mode_test = true;
 
-        session()->put('guest_experiment', 1 );
+        if (Auth::guest()) {
+            session()->put('guest_experiment', 1 );
+        }
+
     }
     public function getExams()
     {

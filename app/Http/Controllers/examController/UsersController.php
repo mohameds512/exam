@@ -115,12 +115,14 @@ class UsersController extends Controller
 
     public function edit($id)
     {
-        $us_id = explode('_',$id);
-        $user_id = $us_id[1] - 521 ;
+        // $us_id = explode('_',$id);
+        // $user_id = $us_id[1] - 521 ;
+        $us_id =  decrypt($id);
 
         try {
 
-            $user = User::findOrFail($user_id);
+            // $user = User::findOrFail($user_id);
+            $user = User::findOrFail($us_id);
             $roles = Role::get()->except(['1']);
             return view('users.edit', compact('roles', 'user'));
 
