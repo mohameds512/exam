@@ -13,10 +13,9 @@ class Exams extends Model
 
 
 
-
     public function grades( )
     {
-        return $this->belongsTo(grades::class , 'grade_id');
+        return $this->belongsTo(Grades::class , 'grade_id');
     }
     public function class( )
     {
