@@ -81,9 +81,9 @@
                         </td>
                         <td class="text-center">
                             <div class="social-links-icons" id="social-links-icons_{{$exam->id}}" >
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.3mexam.one/exams/create" target="_blank" class="btn btn-sm " id="face_icon"> <i class="fab fa-facebook-f"></i>  </a>
-                                <a href="https://twitter.com/intent/tweet?text=my share text&amp;url=http://www.3mexam.one/exams/create" target="_blank" class="btn btn-sm " id="twitter_icon"> <i class="fab fa-twitter"></i> </a>
-                                <a href="https://wa.me/?text=http://www.3mexam.one/exams/create" target="_blank" class="btn btn-sm " id="whats_icon"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.3mexam.one/exams" target="_blank" class="btn btn-sm " id="face_icon"> <i class="fab fa-facebook-f"></i>  </a>
+                                <a href="https://twitter.com/intent/tweet?text=my share text&amp;url=http://www.3mexam.one/exams" target="_blank" class="btn btn-sm " id="twitter_icon"> <i class="fab fa-twitter"></i> </a>
+                                <a href="https://wa.me/?text=http://www.3mexam.one/exams" target="_blank" class="btn btn-sm " id="whats_icon"><i class="fab fa-whatsapp"></i></a>
                             </div>
                             <button class="btn btn-sm btn-warning" wire:click = "edit_exam({{$exam->id}})"title="{{ trans('exams_trans.edit') }}" > <i class="fa fa-edit"></i> </button>
                             <button class="btn btn-sm btn-success"   onclick="show_social({{$exam->id}})" title="{{ trans('exams_trans.share') }}"> <i class="fa fa-share"></i> </button>
