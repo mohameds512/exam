@@ -21,11 +21,11 @@ class CreateQuestionsTable extends Migration
             $table->string('teacher_id');
             $table->integer('qu_deg')->default('1');
             $table->boolean('pending');
-            $table->foreignId('unite_id')->nullablr()->references('id')->on('unites')->cascadeOnDelete();
-            $table->foreignId('subject_id')->nullablr()->references('id')->on('subjects')->cascadeOnDelete();
-            $table->foreignId('section_id')->nullablr()->references('id')->on('sections')->cascadeOnDelete();
-            $table->foreignId('class_id')->nullablr()->references('id')->on('classes')->cascadeOnDelete();
-            $table->foreignId('grade_id')->nullablr()->references('id')->on('grades')->cascadeOnDelete();
+            $table->foreignId('unite_id')->nullable()->references('id')->on('unites')->cascadeOnDelete();
+            $table->foreignId('subject_id')->nullable()->references('id')->on('subjects')->cascadeOnDelete();
+            $table->foreignId('section_id')->nullable()->references('id')->on('sections')->cascadeOnDelete();
+            $table->foreignId('class_id')->nullable()->references('id')->on('classes')->cascadeOnDelete();
+            $table->foreignId('grade_id')->nullable()->references('id')->on('grades')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });
