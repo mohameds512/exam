@@ -10,13 +10,21 @@ use Livewire\Component;
 class Test extends Component
 {
 
-    public $ex_id , $exam  ,$time , $start_test = false , $mode_test  = false , $get_result = false;
+    public $ex_id , $exam  , $time , $start_test = false , $mode_test  = false , $get_result = false;
     public $test_questions , $count_test_qu , $qu_num = 1 , $sel_answer , $test_degs = 0 , $all_degs = 0 ;
     public $grade_deg  , $test_state ;
 
     protected function getListeners()
     {
-        return ['pass_test_id' => 'get_test'];
+        return [
+            'pass_test_id' => 'get_test',
+            'time_out' => 'time_out',
+        ];
+    }
+
+    public function time_out()
+    {
+        $this->submit_answers();
     }
 
     public function back()
@@ -37,6 +45,11 @@ class Test extends Component
     {
         $this->start_test = true ;
         $this->mode_test  = true ;
+        $duration =  $this->exam->duration ;
+        $this->dispatchBrowserEvent('time_cute_down',[
+            'time_duration' => $duration ,
+            'msg_time_out' => trans('exams_trans.time_out'),
+        ]);
     }
     public function get_exam( )
     {
@@ -70,7 +83,12 @@ class Test extends Component
             $this->dispatchBrowserEvent('end_timer');
 
             $str1 = trim($question->right_answer)  ;
-            $str2 = trim($this->sel_answer[$key])  ;
+            if (isset($this->sel_answer[$key])) {
+                $str2 = trim($this->sel_answer[$key])   ;
+            } else {
+                $str2 = '';
+            }
+
 
             if ($str1 == $str2 ) {
 
@@ -93,12 +111,8 @@ class Test extends Component
         $results_table->save();
         }
 
-
-
-
         $this->test = false ;
         $this->get_result = true;
-
     }
 
     public function get_grade()
@@ -139,9 +153,16 @@ class Test extends Component
         $this->get_exam();
     }
 
+    public function update()
+    {
+        if ($this->time == 0 ) {
+            dd('dddddd');
+            $this->submit_answers();
+        }
+    }
+
     public function render()
     {
-
         return view('livewire.test.test');
     }
 }

@@ -88,6 +88,7 @@
                     if(seconds == 0){
                         clearInterval(window.timer);
                         document.getElementById("cuteDown"). innerHTML = msg_time_out ;
+                        Livewire.emit('time_out');
                     }
                 }
             }

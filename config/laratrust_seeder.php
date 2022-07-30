@@ -22,6 +22,11 @@ return [
             'unites' => 'c,r,u,d',
             'questions' => 'c,r,u,d',
             'exams' => 'c,r,u,d',
+            'Permission' => 'c,r,u,d',
+            'Role' => 'c,r,u,d',
+            'stud_prof',
+            'teacher_prof',
+
         ],
         'admin' => [
             'users' => 'c,r',
@@ -32,6 +37,10 @@ return [
             'unites' => 'c,r,u,d',
             'questions' => 'c,r,u,d',
             'exams' => 'c,r,u,d',
+            'Permission' => 'r',
+            'Role' => 'r',
+            'stud_prof',
+            'teacher_prof',
         ],
 
         'teacher' => [
@@ -42,6 +51,7 @@ return [
             'unites' => 'c,r',
             'questions' => 'c,r,u,d',
             'exams' => 'c,r,u,d',
+            'teacher_prof',
         ],
 
         'student' => [
@@ -52,6 +62,8 @@ return [
             'unites' => 'r',
             'questions' => 'r',
             'exams' => 'r',
+            'stud_prof',
+            'teacher_prof',
         ],
 
     ],

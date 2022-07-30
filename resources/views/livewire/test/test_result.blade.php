@@ -63,8 +63,14 @@
                     {{$key+1}}:{!!$question->question!!} <br><br>
                     {{-- <div class="row"> --}}
                         @foreach ($answers as $ans_key =>$answer)
+                        @if (isset($sel_answer[$key]))
                             @php
                                 $str1 = trim($question->right_answer);
+                                // if (isset($sel_answer[$key])) {
+                                //     $str2 = trim($sel_answer[$key]);
+                                // }else{
+                                //     $str2 = 'time_out';
+                                // }
                                 $str2 = trim($sel_answer[$key]);
                                 $str3 = trim($answer);
                             @endphp
@@ -95,6 +101,10 @@
                                 @endif
 
                             @endif
+                        @else
+                        <p>time_out</p>
+                        @endif
+
 
                         @endforeach
                     {{-- </div> --}}

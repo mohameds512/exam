@@ -63,9 +63,15 @@
                 <div class="form-group mb-0 mt-3  center">
                     <div class="flex items-center justify-end mt-4" >
                         <button type="submit" class="btn btn-sm btn-info" style="margin-left: 20px">
-                            {{ trans('register_trans.register') }}
+                            {{ trans('register_trans.enter') }}
                         </button >
+
+                        <a href="{{ route('register') }}"> {{ trans('register_trans.register') }} </a>
+
                     </div>
+                    {{-- <div class="flex items-center justify-end mt-4" >
+                        <a href="{{ route('register') }}"> {{ trans('register_trans.register') }} </a>
+                    </div> --}}
                 </div>
 
             </form>

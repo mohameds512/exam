@@ -597,15 +597,15 @@ class Exams extends Component
 
     }
 
-    public function start_test()
-    {
-        $this->start_test = true ;
-        $duration =  $this->test_exam->duration ;
-        $this->dispatchBrowserEvent('time_cute_down',[
-            'time_duration' => $duration ,
-            'msg_time_out' => trans('exams_trans.time_out'),
-        ]);
-    }
+    // public function start_test()
+    // {
+    //     $this->start_test = true ;
+    //     $duration =  $this->test_exam->duration ;
+    //     $this->dispatchBrowserEvent('time_cute_down',[
+    //         'time_duration' => $duration ,
+    //         'msg_time_out' => trans('exams_trans.time_out'),
+    //     ]);
+    // }
 
 
     public function next_qu()

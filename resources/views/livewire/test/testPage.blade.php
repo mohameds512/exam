@@ -19,13 +19,12 @@
         </div>
         <div class="col" style="text-align: center">
             {{ trans('exams_trans.created_by') }} :  {{$exam->teacher->name}} <br>
-            {{$exam->name}} <br>
+            {{ trans('exams_trans.exam') }} : {{$exam->name}} <br>
             @if ( Auth::check() )
                 {{ trans('exams_trans.student') }} : <u> {{ Auth::user()->name }} </u> <br>
             @endif
 
-            <p id="cuteDown" style="color: rgb(247, 6, 6) ; font-size: 1ypx" > {{$time}}</p> <br>
-
+            <p id="cuteDown" style="color: rgb(247, 6, 6) ; font-size: 1ypx" >  </p> <br>
 
         </div>
     </div>
@@ -34,7 +33,6 @@
         <button class="btn btn-info" wire:click="start_test" > {{ trans('exams_trans.start') }} </button>
     </div>
     <div style="display: {{ $start_test == true ? '' : 'none' }}">
-
 
         @foreach ($test_questions  as $key=>$question)
             @php
@@ -86,7 +84,6 @@
 
             <div class="col" style="text-align: left " >
                 <p>
-
                     @if ($qu_num >= $count_test_qu)
                         <a href="#"> {{$count_test_qu}} </a>  / {{$count_test_qu}}
                     @elseif($qu_num < $count_test_qu)
