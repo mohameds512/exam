@@ -149,8 +149,26 @@ class Roles extends Component
 
             if (!empty($this->per_role)) {
                 $role->syncPermissions($this->per_role);
+                $role->save();
+                //get all perm_for_role
+                $permissions =  $role->permissions;
+                $permission_name = [];
+                foreach ($permissions as $permission) {
+                    array_push($permission_name , $permission->name);
+                }
+                //get all users_related_with_the_role
+                $users = User::whereHas( 'roles' , function($q){
+                    $q->where('name' , $this->role_name);
+                } )->get();
+                //attach_new_perms_with_users
+                foreach ($users as $user) {
+                    $user->syncPermissions($permission_name);
+                }
+            }else{
+                $role->save();
             }
-            $role->save();
+
+
             $this->cancel_edit_role();
             $this->dispatchBrowserEvent('toastr' ,[
                 'type' => 'warning',

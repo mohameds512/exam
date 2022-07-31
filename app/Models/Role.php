@@ -10,6 +10,10 @@ class Role extends LaratrustRole
 
     protected $appends = ['perm_ids'];
 
+    // public function users()
+    // {
+    //     return $this->belongsToMany('User','assigned_roles');
+    // }
     public function getPermIdsAttribute()
     {
         $ids = [] ;

@@ -24,9 +24,8 @@ return [
             'exams' => 'c,r,u,d',
             'Permission' => 'c,r,u,d',
             'Role' => 'c,r,u,d',
-            'stud_prof',
-            'teacher_prof',
-
+            'stud' => 'p',
+            'teacher' => 'p',
         ],
         'admin' => [
             'users' => 'c,r',
@@ -39,8 +38,8 @@ return [
             'exams' => 'c,r,u,d',
             'Permission' => 'r',
             'Role' => 'r',
-            'stud_prof',
-            'teacher_prof',
+            'stud' => 'p',
+            'teacher' => 'p',
         ],
 
         'teacher' => [
@@ -51,7 +50,7 @@ return [
             'unites' => 'c,r',
             'questions' => 'c,r,u,d',
             'exams' => 'c,r,u,d',
-            'teacher_prof',
+            'teacher' => 'p',
         ],
 
         'student' => [
@@ -62,8 +61,7 @@ return [
             'unites' => 'r',
             'questions' => 'r',
             'exams' => 'r',
-            'stud_prof',
-            'teacher_prof',
+            'stud' => 'p',
         ],
 
     ],
@@ -72,6 +70,7 @@ return [
         'c' => 'create',
         'r' => 'read',
         'u' => 'update',
-        'd' => 'delete'
+        'd' => 'delete',
+        'p' => 'prof'
     ]
 ];
