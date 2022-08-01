@@ -27,12 +27,6 @@ class storeClassRequest extends FormRequest
             'Grade_id'=>'required',
             'name_en'=>'required',
             'name_ar'=>'required',
-            ''=>'',
-            ''=>'',
-            ''=>'',
-            ''=>'',
-            ''=>'',
-            ''=>'',
         ];
     }
 }
