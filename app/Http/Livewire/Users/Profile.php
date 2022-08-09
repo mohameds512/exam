@@ -169,7 +169,7 @@ class Profile extends Component
     {
         $this->mode_edit_phone = true;
     }
-    public function cancel_edit_phone( )
+    public function cancel_update_phone( )
     {
         $this->mode_edit_phone = true ;
     }
