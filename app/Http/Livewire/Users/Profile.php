@@ -171,13 +171,13 @@ class Profile extends Component
     }
     public function cancel_update_phone( )
     {
-        $this->mode_edit_phone = true ;
+        $this->mode_edit_phone = false ;
     }
     public function update_phone ( )
     {
 
         $this->validate([
-            'user_phone' => 'required|numeric|digits:11|unique:users,phoneNumber,'.$this->id,
+            'user_phone' => 'required|numeric|digits:11|unique:users,phoneNumber,'.$this->user_id,
         ]);
         $this->user->phoneNumber = $this->user_phone ;
         $this->user->save();
