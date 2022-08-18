@@ -7,7 +7,7 @@
     @endif
 
 
-    @if ($user->hasPermission('teacher_prof'))
+    @if ($user->hasPermission('teacher-prof'))
         @if (Auth::user()->id == $user->id)
             <div class="row row-sm" >
                 <div class="col-lg-12">

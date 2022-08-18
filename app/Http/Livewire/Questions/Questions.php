@@ -205,6 +205,11 @@ class Questions extends Component
                     'type' => 'warning',
                     'message' => trans('questions_trans.qu_must_more_than_50'),
                 ]);
+            }elseif ($this->count_selected_questions < 5) {
+                $this->dispatchBrowserEvent('toastr' ,[
+                    'type' => 'warning',
+                    'message' => trans('questions_trans.qu_must_not_less_than_5'),
+                ]);
             } else {
                 $this->emit('go_to_3_step' , $this->selected_questions);
             }
